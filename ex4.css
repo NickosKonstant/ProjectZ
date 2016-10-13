@@ -1,0 +1,43 @@
+h1{
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  background-color: orange;
+}
+
+h3{
+  color: blue;
+  font-size: 32px;
+}
+h2{
+  text-align: center;
+}
+
+.left{
+  margin-left: 210px;
+}
+.center{
+    text-align: center;
+}
+
+lifepoint{
+  text-decoration: underline;
+}
+
+year{
+  font-style: oblique;
+}
+
+organisation{
+  font-weight: bold;
+}
+
+
+.options{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+ul.bullets li ul{
+  list-style: circle;
+}

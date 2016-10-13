@@ -1,0 +1,35 @@
+div{
+  text-align: center;
+  background-color: darkblue;
+}
+
+h2{
+  background-color: orange;
+}
+
+li{
+  color: blue;
+  font-weight: bold;
+}
+
+
+job_position{
+  color: green;
+}
+
+institude{
+  font-style: oblique;
+}
+
+name{
+  font-size: 28px;
+  font-weight: bolder;
+  color: yellow;
+}
+
+address{
+  font-weight: bold;
+  color: white;
+  font-size: 26;
+
+}

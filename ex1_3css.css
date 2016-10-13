@@ -1,0 +1,18 @@
+h1{
+  background-color:yellow;
+  color:blue;
+  }
+
+body{
+  text-align: center;
+}
+
+p.thick{
+  text-align: left;
+  font-weight: bold;
+}
+
+italic_colored{
+  color: red;
+  font-style: italic;
+}

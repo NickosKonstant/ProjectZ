@@ -1,0 +1,21 @@
+h1{
+  text-align: center;
+  color: purple;
+}
+
+h3{
+  color: green;
+}
+
+style_1{
+  color: red;
+}
+
+style_2{
+  color: orange;
+  font-style: italic;
+}
+
+style_3{
+  background-color: yellow;
+}

@@ -1,0 +1,81 @@
+﻿@using Freecon;
+@using System.Data.Entity;
+@using System.Linq;
+
+@{
+    Layout = "~/Shared/_SearchPageLayout.cshtml";
+    Page.Title = "Services";
+
+
+    var db = new Freecon();
+
+
+    var query = from member in db.Members
+                join serviceProvided in db.MemberServices
+                on member.userName equals serviceProvided.MemberID
+                join service in db.Services
+                on serviceProvided.ServiceID equals service.Id
+                select new { Name = member.FirstName, Sirname = member.LastName, ServiceName = service.ServiceName, Cost = serviceProvided.ServiceCostPerHour };
+
+    // To Do
+    // Enable filters from Search Cataloge
+
+    /*
+    IQueryable<ServiceResults> query =null;
+    if (UrlData.Count == 1) {
+        query = from member in db.Members
+                join serviceProvided in db.MemberServices
+                on member.userName equals serviceProvided.MemberID
+                join service in db.Services
+                on serviceProvided.ServiceID equals service.Id
+                select new ServiceResults() { Name = member.FirstName, Sirname = member.LastName, ServiceName = service.ServiceName, Cost = serviceProvided.ServiceCostPerHour };
+
+    }
+    else if (UrlData.Count == 0 && UrlData[0].IsInt())
+    {
+        var category = UrlData[0].AsInt();
+        query = from member in db.Members
+                join serviceProvided in db.MemberServices
+                on member.userName equals serviceProvided.MemberID
+                join service in db.Services
+                on serviceProvided.ServiceID equals service.Id
+                where service.Id == category
+                select new ServiceResults() { Name = member.FirstName, Sirname = member.LastName, ServiceName = service.ServiceName, Cost = serviceProvided.ServiceCostPerHour };
+    }
+    else
+    {
+        // Should Never reach this
+        // Bypass Null exeption
+        query = from m in db.Members
+                select new ServiceResults();
+    }
+
+    */
+}
+
+   
+            <div class="searchResults">
+            <p>Διαθέσιμες Υπηρεσίες</p>
+            <ol>
+                @foreach (var s in query)
+                {
+                    <li class="result">
+                        <table cellpadding="0" cellspacing="0" width="100%" height="60px" align="center">
+                            <tr>
+
+                                <td width="300px"><h3 class="MemberFullname"><strong><a href="meberProfile"> @s.Name @s.Sirname</a></strong></h3></td>
+                                <td rowspan="2">@s.Cost coins/hour</td>
+                                <td rowspan="2">
+                                    <button type="button" onclick="alert('Διατήθεστε να κλείσετε την παρούσα υπηρεσία. Ο αρμόδιος πάροχος θα ειδοποιηθεί για αυτό σας το ενδιαφέρον!')">Κλείσε Υπηρεσία</button>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>@s.ServiceName </td>
+                            </tr>
+                        </table>
+                    </li>
+                }
+                }
+     
+    

@@ -1,0 +1,5 @@
+xxxxxxxxxx
+x-S--x---x
+x--------x
+x----0---x
+xxxxxxxxxx
